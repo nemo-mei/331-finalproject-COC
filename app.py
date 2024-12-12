@@ -144,6 +144,7 @@ def main():
         profession_choice = st.selectbox("Choose your profession:", [p["Profession"] for p in professions_data])
         profession = next(p for p in professions_data if p["Profession"] == profession_choice)
         st.session_state.character["Profession"] = profession
+        st.write(f"**Key Skills:** {profession['Key Skills']}")
         st.write(f"**Background:** {profession['Background']}")
         if st.button("Generate Attributes"):
             if "Attributes" not in st.session_state.character:
